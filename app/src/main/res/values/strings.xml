@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- principal -->
+    <string name="app_name">ANIBIKE</string>
+    <string name="app_home">Súbete a tu bici y vive una aventura como en tus animes favoritos."</string>
+    <string name="comienza">Comienza</string>
+
+    <!-- Login -->
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="olvide_contrasena">¿Olvidaste tu contraseña?</string>
+    <string name="no_tienes_cuenta">¿No tienes una cuenta? Regístrate</string>
+
+    <!-- Registro -->
+    <string name="registrarse">Registrarse</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="registro_rapido">O regístrate con</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes una cuenta? Inicia sesión</string>
+
+    <!-- Validaciones / mensajes -->
+    <string name="campo_requerido">Este campo es obligatorio</string>
+    <string name="email_invalido">Correo inválido</string>
+    <string name="registro_exitoso">Registro exitoso</string>
+    <string name="error_registro">Ocurrió un error durante el registro</string>
+    <string name="login_exitoso">Sesión iniciada correctamente</string>
+    <string name="error_login">Correo o contraseña incorrectos</string>
+
+    <!-- Botones sociales -->
+    <string name="iniciar_con_google">Iniciar con Google</string>
+    <string name="iniciar_con_facebook">Iniciar con Facebook</string>
+
+    <!-- General -->
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+</resources>

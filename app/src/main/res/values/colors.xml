@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores base -->
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+
+    <!-- Paleta clara -->
+    <color name="fondo">#F5E7C3</color>
+    <color name="texto">#4B382A</color>
+    <color name="boton">#A57C5B</color>
+    <color name="borde">#D3BFA7</color>
+
+    <!-- Acentos y promociones -->
+    <color name="etiqueta_oferta">#7B5C48</color>
+    <color name="resaltado">#F8C8DC</color>
+    <color name="descuento">#FFAA88</color>
+  </resources>
