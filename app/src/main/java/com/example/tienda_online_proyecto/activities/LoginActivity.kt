@@ -18,6 +18,11 @@ class LoginActivity: AppCompatActivity(){
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)}
 
+        // interacion hacia Menu
+        findViewById<TextView>(R.id.btn_login_iniciar).setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)}
+
 
         }
     }

@@ -17,6 +17,11 @@ class RegistroActivity : AppCompatActivity(){
         findViewById<Button>(R.id.btn_ir_login).setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)   }
+
+        // interacion hacia Menu
+        findViewById<Button>(R.id.btn_crear_cuenta).setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)   }
     }
 
 }

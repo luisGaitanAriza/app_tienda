@@ -20,5 +20,11 @@ class HomeActivity :AppCompatActivity(){
             startActivity(intent)
         }
 
+        // Menu
+        findViewById<TextView>(R.id.btn_home).setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

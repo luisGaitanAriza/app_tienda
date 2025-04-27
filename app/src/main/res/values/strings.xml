@@ -35,4 +35,24 @@
     <!-- General -->
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
+
+    <!-- Menu -->
+    <string name="direccion">Ac. 32 #17 – 30, Bogotá</string>
+    <string name="buscar">Buscador</string>
+    <string name="producto_1">Casco</string>
+    <string name="producto_2">Guantes</string>
+    <string name="producto_3">Accesorios</string>
+    <string name="producto_4">Luz</string>
+    <string name="producto_5">Jersey</string>
+    <string name="promocion">15% OFF</string>
+    <string name="destacados">Productos destacados</string>
+    <string name="sale">SALE</string>
+
+    <!-- Carrito -->
+    <string name="carrito">Carrito de compra</string>
+    <string name="productos">Productos</string>
+    <string name="valorcu">10%</string>
+    <string name="pagar">Ir a pagar</string>
+    <string name="valor">00.00</string>
 </resources>
+
