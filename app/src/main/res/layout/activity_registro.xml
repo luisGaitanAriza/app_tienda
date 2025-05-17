@@ -77,18 +77,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
-    <TextView
-        android:id="@+id/tv_registro_rapido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/registro_rapido"
-        android:textColor="@color/texto"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/facebook"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toEndOf="@+id/google"
-        app:layout_constraintTop_toBottomOf="@+id/btn_crear_cuenta" />
+
 
     <ImageView
         android:id="@+id/logo"
@@ -100,29 +89,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="90dp"
-        android:src="@drawable/ic_google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/facebook"
-        app:layout_constraintHorizontal_bias="0.60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
-
-    <ImageView
-        android:id="@+id/facebook"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="90dp"
-        android:src="@drawable/ic_facebook"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/google"
-    app:layout_constraintBottom_toBottomOf="@id/google" />
 
     <Button
         android:id="@+id/btn_crear_cuenta"
@@ -150,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_registro_rapido"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crear_cuenta"
         app:layout_constraintVertical_bias="1.0" />
 
 

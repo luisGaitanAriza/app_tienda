@@ -11,6 +11,7 @@
     <string name="contrasena">Contraseña</string>
     <string name="olvide_contrasena">¿Olvidaste tu contraseña?</string>
     <string name="no_tienes_cuenta">¿No tienes una cuenta? Regístrate</string>
+    <string name="default_web_client_id">562735152365-6h9sqe0mt1ms2c3rrm5gib3tccuqi6cj.apps.googleusercontent.com</string>
 
     <!-- Registro -->
     <string name="registrarse">Registrarse</string>

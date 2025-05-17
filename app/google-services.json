@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "562735152365",
+    "project_id": "anibikeapp",
+    "storage_bucket": "anibikeapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562735152365:android:d5d15d7ee011e14648a0e4",
+        "android_client_info": {
+          "package_name": "com.example.tienda_online_proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562735152365-6h9sqe0mt1ms2c3rrm5gib3tccuqi6cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ]
+    ,
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIHbqBW7zKpk1ikwNJ7FbRSHDOSjk_CDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562735152365-6h9sqe0mt1ms2c3rrm5gib3tccuqi6cj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
