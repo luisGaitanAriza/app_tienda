@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filtroContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="12dp"
+    android:layout_marginTop="12dp"
+    app:layout_constraintTop_toBottomOf="@id/etBuscador"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <!-- Cascos -->
+    <LinearLayout
+        android:id="@+id/btnCascos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/filter_button_background">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_casco"
+            android:contentDescription="@string/casco" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cascos"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Guantes -->
+    <LinearLayout
+        android:id="@+id/btnGuantes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/filter_button_background">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_guantes"
+            android:contentDescription="@string/guantes" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guantes"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Accesorios -->
+    <LinearLayout
+        android:id="@+id/btnAccesorios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/filter_button_background">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_accesorio"
+            android:contentDescription="@string/accesorio" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accesorios"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+</LinearLayout>

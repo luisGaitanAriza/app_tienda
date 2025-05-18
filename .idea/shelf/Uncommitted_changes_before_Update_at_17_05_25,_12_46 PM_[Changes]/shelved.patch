@@ -1,0 +1,112 @@
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"deploymentTargetSelector\">\n    <selectionStates>\n      <SelectionState runConfigName=\"app\">\n        <option name=\"selectionMode\" value=\"DROPDOWN\" />\n        <DropdownSelection timestamp=\"2025-04-06T15:11:12.487887100Z\">\n          <Target type=\"DEFAULT_BOOT\">\n            <handle>\n              <DeviceId pluginId=\"PhysicalDevice\" identifier=\"serial=c0cf309c\" />\n            </handle>\n          </Target>\n        </DropdownSelection>\n        <DialogSelection />\n      </SelectionState>\n    </selectionStates>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+--- a/.idea/deploymentTargetSelector.xml	(revision b12b5dcd75fed618fb7e4bff852b92de7dbe6ebf)
++++ b/.idea/deploymentTargetSelector.xml	(date 1745704593334)
+@@ -4,10 +4,10 @@
+     <selectionStates>
+       <SelectionState runConfigName="app">
+         <option name="selectionMode" value="DROPDOWN" />
+-        <DropdownSelection timestamp="2025-04-06T15:11:12.487887100Z">
++        <DropdownSelection timestamp="2025-04-26T21:56:30.607873Z">
+           <Target type="DEFAULT_BOOT">
+             <handle>
+-              <DeviceId pluginId="PhysicalDevice" identifier="serial=c0cf309c" />
++              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/vivianas/.android/avd/Pixel_9_Pro_API_35.avd" />
+             </handle>
+           </Target>
+         </DropdownSelection>
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"CHOOSE_PER_TEST\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision b12b5dcd75fed618fb7e4bff852b92de7dbe6ebf)
++++ b/.idea/gradle.xml	(date 1745702776084)
+@@ -13,6 +13,7 @@
+             <option value="$PROJECT_DIR$/app" />
+           </set>
+         </option>
++        <option name="resolveExternalAnnotations" value="false" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: app/src/main/res/layout/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"@color/fondo\">\n\n    <ImageView\n        android:id=\"@+id/spla_logo\"\n        android:layout_width=\"298dp\"\n        android:layout_height=\"167dp\"\n        android:layout_marginTop=\"160dp\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.495\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:srcCompat=\"@drawable/logo\" />\n\n    <TextView\n        android:id=\"@+id/spla_nombre\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:fontFamily=\"@font/aclonica\"\n        android:text=\"@string/app_name\"\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Body1\"\n        android:textSize=\"34sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.498\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/spla_logo\"\n        app:layout_constraintVertical_bias=\"0.181\" />\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash.xml b/app/src/main/res/layout/activity_splash.xml
+--- a/app/src/main/res/layout/activity_splash.xml	(revision b12b5dcd75fed618fb7e4bff852b92de7dbe6ebf)
++++ b/app/src/main/res/layout/activity_splash.xml	(date 1745706309867)
+@@ -10,11 +10,13 @@
+         android:id="@+id/spla_logo"
+         android:layout_width="298dp"
+         android:layout_height="167dp"
+-        android:layout_marginTop="160dp"
++        android:contentDescription="@string/anibike_logo"
++        app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.495"
++        app:layout_constraintHorizontal_bias="0.5"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.5"
+         app:srcCompat="@drawable/logo" />
+ 
+     <TextView
+@@ -28,8 +30,8 @@
+         android:textStyle="bold"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.498"
++        app:layout_constraintHorizontal_bias="0.5"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/spla_logo"
+-        app:layout_constraintVertical_bias="0.181" />
++        app:layout_constraintVertical_bias="0.105" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"jbr-21\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b12b5dcd75fed618fb7e4bff852b92de7dbe6ebf)
++++ b/.idea/misc.xml	(date 1745703155327)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n\n    <!-- principal -->\n    <string name=\"app_name\">ANIBIKE</string>\n    <string name=\"app_home\">Súbete a tu bici y vive una aventura como en tus animes favoritos.\"</string>\n    <string name=\"comienza\">Comienza</string>\n\n    <!-- Login -->\n    <string name=\"iniciar_sesion\">Iniciar sesión</string>\n    <string name=\"correo_electronico\">Correo electrónico</string>\n    <string name=\"contrasena\">Contraseña</string>\n    <string name=\"olvide_contrasena\">¿Olvidaste tu contraseña?</string>\n    <string name=\"no_tienes_cuenta\">¿No tienes una cuenta? Regístrate</string>\n\n    <!-- Registro -->\n    <string name=\"registrarse\">Registrarse</string>\n    <string name=\"nombre\">Nombre</string>\n    <string name=\"apellido\">Apellido</string>\n    <string name=\"crear_cuenta\">Crear cuenta</string>\n    <string name=\"registro_rapido\">O regístrate con</string>\n    <string name=\"ya_tienes_cuenta\">¿Ya tienes una cuenta? Inicia sesión</string>\n\n    <!-- Validaciones / mensajes -->\n    <string name=\"campo_requerido\">Este campo es obligatorio</string>\n    <string name=\"email_invalido\">Correo inválido</string>\n    <string name=\"registro_exitoso\">Registro exitoso</string>\n    <string name=\"error_registro\">Ocurrió un error durante el registro</string>\n    <string name=\"login_exitoso\">Sesión iniciada correctamente</string>\n    <string name=\"error_login\">Correo o contraseña incorrectos</string>\n\n    <!-- Botones sociales -->\n    <string name=\"iniciar_con_google\">Iniciar con Google</string>\n    <string name=\"iniciar_con_facebook\">Iniciar con Facebook</string>\n\n    <!-- General -->\n    <string name=\"aceptar\">Aceptar</string>\n    <string name=\"cancelar\">Cancelar</string>\n</resources>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision b12b5dcd75fed618fb7e4bff852b92de7dbe6ebf)
++++ b/app/src/main/res/values/strings.xml	(date 1745705744930)
+@@ -4,6 +4,7 @@
+     <string name="app_name">ANIBIKE</string>
+     <string name="app_home">Súbete a tu bici y vive una aventura como en tus animes favoritos."</string>
+     <string name="comienza">Comienza</string>
++    <string name="anibike_logo">Anibike logo</string>
+ 
+     <!-- Login -->
+     <string name="iniciar_sesion">Iniciar sesión</string>

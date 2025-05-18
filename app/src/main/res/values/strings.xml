@@ -55,5 +55,17 @@
     <string name="valorcu">10%</string>
     <string name="pagar">Ir a pagar</string>
     <string name="valor">00.00</string>
+    <string name="imagen_del_producto">Imagen del producto</string>
+    <string name="casco">Casco</string>
+    <string name="cascos">Cascos</string>
+    <string name="guantes">Guantes</string>
+    <string name="accesorio">Accesorio</string>
+    <string name="accesorios">Accesorios</string>
+    <string name="imagencarrito">imagenCarrito</string>
+    <string name="nombre_del_producto">Nombre del producto</string>
+    <string name="_000_00">$000.00</string>
+    <string name="_1">1</string>
+    <string name="btn_sumar">btn-sumar</string>
+    <string name="btn_restar">btn-restar</string>
 </resources>
 

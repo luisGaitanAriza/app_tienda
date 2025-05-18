@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="12dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Imagen del producto -->
+        <ImageView
+            android:id="@+id/ivProductoCarrito"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/imagencarrito"
+            android:scaleType="centerCrop"
+            android:background="@drawable/logo"
+            android:src="@drawable/logo" />
+
+        <!-- Info del producto -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNombreCarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_del_producto"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvPrecioCarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_000_00"
+                android:textColor="#444444"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <!-- Control de cantidad -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginStart="8dp">
+
+            <ImageButton
+                android:id="@+id/btnRestar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/btn_restar"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/tvCantidad"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_1"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginHorizontal="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSumar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/btn_sumar"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
