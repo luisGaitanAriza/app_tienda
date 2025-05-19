@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -40,8 +41,22 @@ android {
     // Configuración de View Binding
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
+
+secrets {
+    // To add your Maps API key to this project:
+    // 1. If the secrets.properties file does not exist, create it in the same folder as the local.properties file.
+    // 2. Add this line, where YOUR_API_KEY is your API key:
+    //        MAPS_API_KEY=YOUR_API_KEY
+    propertiesFileName = "secrets.properties"
+
+    // A properties file containing default secret values. This file can be
+    // checked in version control.
+    defaultPropertiesFileName = "local.defaults.properties"
+}
+
 
 dependencies {
     // Dependencias básicas
@@ -66,4 +81,10 @@ dependencies {
 
     // imagenes
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // localización
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    // Places and Maps SDKs
+    implementation("com.google.android.libraries.places:places:4.1.0")
 }

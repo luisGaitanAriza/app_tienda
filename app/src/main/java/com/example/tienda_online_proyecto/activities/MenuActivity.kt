@@ -5,19 +5,39 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tienda_online_proyecto.R
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tienda_online_proyecto.adapter.ProductoAdapter
 import com.example.tienda_online_proyecto.model.Categoria
 import com.example.tienda_online_proyecto.model.Producto
+import android.widget.TextView
+import com.example.tienda_online_proyecto.utils.LocationHelper
 
 class MenuActivity :AppCompatActivity(){
     private var productoAdapter = ProductoAdapter(emptyList())
+
+    private lateinit var locationHelper: LocationHelper
+
+    private val locationPermissionRequest =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+                val tvDireccion = findViewById<TextView>(R.id.tvDireccion)
+                locationHelper.getCurrentLocation(tvDireccion)
+            } else {
+                Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
+        // Inicializar el helper DESPUÉS de registrar el permiso
+        val tvDireccion = findViewById<TextView>(R.id.tvDireccion)
+        locationHelper = LocationHelper(this, locationPermissionRequest)
+        locationHelper.checkLocationPermission(tvDireccion)
 
         // carrito
         findViewById<ImageView>(R.id.ivCarrito).setOnClickListener {
@@ -61,4 +81,6 @@ class MenuActivity :AppCompatActivity(){
         super.onResume()
         productoAdapter.notifyDataSetChanged()
     }
+
+
 }
