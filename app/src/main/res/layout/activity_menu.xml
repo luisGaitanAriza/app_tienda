@@ -1,210 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F0DE">
 
+    <!--  Menu -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ic_lista"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:padding="5dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/etBuscador"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFAFA"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_menu" />
+    </androidx.cardview.widget.CardView>
+
+    <!--  Location -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:background="#F8F0DE"
+        app:layout_constraintBottom_toTopOf="@+id/etBuscador"
+        app:layout_constraintStart_toEndOf="@+id/ic_lista"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ic_location" />
+
+    <!--  Dirección -->
+    <TextView
+        android:id="@+id/tvDireccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/direccion"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/etBuscador"
+        app:layout_constraintEnd_toStartOf="@+id/ivCarrito"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <!--  Carrito -->
+    <ImageView
+        android:id="@+id/ivCarrito"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_arrito"
+        app:layout_constraintBottom_toTopOf="@+id/etBuscador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ic_shopping_cart" />
+
+    <!--  Buscador -->
     <EditText
         android:id="@+id/etBuscador"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_background"
         android:drawablePadding="8dp"
         android:hint="@string/buscar"
         android:paddingStart="16dp"
         android:textColor="#000000"
         android:textColorHint="#888888"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvDireccion"
-        android:layout_width="wrap_content"
+    <!--  Fragment con filtros -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/filtrosFragmentContainer"
+        android:name="com.example.tienda_online_proyecto.fragments.FiltrosFragment"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/direccion"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/ivCarrito"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador" />
-
-    <TextView
-        android:id="@+id/text_producto1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/producto_1"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etBuscador"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_lista" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/text_producto2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/producto_2"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_producto1" />
-
-    <TextView
-        android:id="@+id/text_producto3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/producto_3"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_producto2" />
-
-    <TextView
-        android:id="@+id/Sale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!-- RecyclerView para productos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProductos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:padding="8dp"
-        android:text="@string/sale"
-        android:textColor="#3B2C22"
-        android:textStyle="bold"
-        android:layout_marginTop="92dp"
-        app:layout_constraintEnd_toStartOf="@+id/text_promocion"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_producto3" />
-
-
-    <TextView
-        android:id="@+id/text_destacados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:gravity="center"
-        android:text="@string/destacados"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_promocion" />
-
-    <TextView
-        android:id="@+id/text_promocion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="140dp"
-        android:text="@string/promocion"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_producto_3" />
-
-    <ImageView
-        android:id="@+id/ivCarrito"
-        android:layout_width="54dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_arrito"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador" />
-
-    <ImageView
-        android:id="@+id/ic_lista"
-        android:layout_width="36dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador"
-        app:srcCompat="@android:drawable/ic_dialog_dialer" />
-
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="43dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="#0D0B0B"
-        app:layout_constraintEnd_toStartOf="@+id/tvDireccion"
-        app:layout_constraintHorizontal_bias="0.385"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador"
-        app:srcCompat="@android:drawable/ic_dialog_map" />
-
-    <ImageView
-        android:id="@+id/ic_producto_1"
-        android:layout_width="91dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toEndOf="@+id/text_producto1"
-        app:layout_constraintTop_toBottomOf="@+id/tvDireccion"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <ImageView
-        android:id="@+id/ic_producto_2"
-        android:layout_width="91dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/text_producto2"
-        app:layout_constraintTop_toBottomOf="@+id/ic_producto_1"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <ImageView
-        android:id="@+id/ic_producto_3"
-        android:layout_width="91dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/text_producto3"
-        app:layout_constraintTop_toBottomOf="@+id/ic_producto_2"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <ImageView
-        android:id="@+id/ic_producto_4"
-        android:layout_width="86dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_destacados"
-        app:layout_constraintVertical_bias="0.375"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <ImageView
-        android:id="@+id/ic_producto_5"
-        android:layout_width="86dp"
-        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ic_producto_4"
-        app:layout_constraintTop_toBottomOf="@+id/text_destacados"
-        app:layout_constraintVertical_bias="0.375"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filtrosFragmentContainer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
