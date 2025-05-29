@@ -13,6 +13,7 @@ import com.example.tienda_online_proyecto.adapter.ProductoAdapter
 import com.example.tienda_online_proyecto.model.Categoria
 import com.example.tienda_online_proyecto.model.Producto
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import com.example.tienda_online_proyecto.utils.LocationHelper
 
 class MenuActivity :AppCompatActivity(){
@@ -42,6 +43,12 @@ class MenuActivity :AppCompatActivity(){
         // carrito
         findViewById<ImageView>(R.id.ivCarrito).setOnClickListener {
             val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
+        // admin
+        findViewById<CardView>(R.id.ic_lista).setOnClickListener {
+            val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
         }
 

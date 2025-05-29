@@ -1,4 +1,5 @@
 package com.example.tienda_online_proyecto.model
+import java.io.Serializable
 
 enum class Categoria {
     CASCO,
@@ -14,4 +15,4 @@ data class Producto(
     val imagenUrl: String,
     val categoria: Categoria, // "casco", "guantes", "accesorio"
     var cantidad: Int = 1
-)
+): Serializable

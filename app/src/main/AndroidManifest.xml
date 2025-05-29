@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tienda_online_proyecto">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +17,13 @@
         android:theme="@style/Theme.Tienda_Online_Proyecto"
         tools:targetApi="31">
         <activity
+            android:name=".activities.FormularioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AdminActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tienda_Online_Proyecto" />
+        <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -24,25 +31,25 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- llamado de activity -->
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
-
-        <activity android:name=".activities.HomeActivity"
-            android:exported="false"/>
-
-        <activity android:name=".activities.LoginActivity"
-            android:exported="false"/>
-
-        <activity android:name=".activities.RegistroActivity"
-            android:exported="false"/>
-
-        <activity android:name=".activities.MenuActivity"
-            android:exported="false"/>
-        <activity android:name=".activities.CarritoActivity"
-            android:exported="false"/>
+        </activity> <!-- llamado de activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CarritoActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
