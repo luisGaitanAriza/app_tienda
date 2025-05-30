@@ -18,6 +18,7 @@ import com.example.tienda_online_proyecto.R
 import com.example.tienda_online_proyecto.adapter.ProductoAdapter
 import com.example.tienda_online_proyecto.model.Categoria
 import com.example.tienda_online_proyecto.model.Producto
+import com.example.tienda_online_proyecto.utils.FirebaseService
 import java.util.UUID
 
 class AdminActivity : AppCompatActivity() {
@@ -25,7 +26,6 @@ class AdminActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProductoAdapter
     private val listaDeProductos = mutableListOf<Producto>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,14 +40,23 @@ class AdminActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerProductosAdmin)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        cargarProductosDeEjemplo()
-
         adapter = ProductoAdapter(
             productos = listaDeProductos,
             onEditar = { producto -> editarProducto(producto) },
             onEliminar = { producto -> eliminarProducto(producto) }
         )
         recyclerView.adapter = adapter
+
+        FirebaseService.obtenerProductos(
+            onSuccess = { productos ->
+                listaDeProductos.clear()
+                listaDeProductos.addAll(productos)
+                adapter.actualizarLista(listaDeProductos)
+            },
+            onError = { error ->
+                Toast.makeText(this, "Error: $error", Toast.LENGTH_SHORT).show()
+            }
+        )
 
         findViewById<Button>(R.id.btnAddProduct).setOnClickListener {
             val intent = Intent(this, FormularioActivity::class.java)
@@ -79,9 +88,17 @@ class AdminActivity : AppCompatActivity() {
     }
 
     private fun eliminarProducto(producto: Producto) {
-        listaDeProductos.remove(producto)
-        adapter.actualizarLista(listaDeProductos)
-        Toast.makeText(this, "${producto.nombre} eliminado", Toast.LENGTH_SHORT).show()
+        FirebaseService.eliminarProducto(
+            id = producto.id,
+            onSuccess = {
+                listaDeProductos.remove(producto)
+                adapter.actualizarLista(listaDeProductos)
+                Toast.makeText(this, "${producto.nombre} eliminado", Toast.LENGTH_SHORT).show()
+            },
+            onFailure = {
+                Toast.makeText(this, "Error al eliminar ${producto.nombre}", Toast.LENGTH_SHORT).show()
+            }
+        )
     }
 
     private fun agregarNuevoProducto() {
@@ -104,15 +121,29 @@ class AdminActivity : AppCompatActivity() {
             producto?.let {
                 val index = listaDeProductos.indexOfFirst { p -> p.id == it.id }
                 if (index >= 0) {
-                    // Producto editado
-                    listaDeProductos[index] = it
-                    adapter.actualizarLista(listaDeProductos)
-                    Toast.makeText(this, "Producto actualizado", Toast.LENGTH_SHORT).show()
+                    FirebaseService.actualizarProducto(
+                        it,
+                        onSuccess = {
+                            listaDeProductos[index] = it
+                            adapter.actualizarLista(listaDeProductos)
+                            Toast.makeText(this, "Producto actualizado", Toast.LENGTH_SHORT).show()
+                        },
+                        onFailure = {
+                            Toast.makeText(this, "Error al actualizar", Toast.LENGTH_SHORT).show()
+                        }
+                    )
                 } else {
-                    // Producto nuevo
-                    listaDeProductos.add(it)
-                    adapter.actualizarLista(listaDeProductos)
-                    Toast.makeText(this, "Producto agregado", Toast.LENGTH_SHORT).show()
+                    FirebaseService.agregarProducto(
+                        it,
+                        onSuccess = {
+                            listaDeProductos.add(it)
+                            adapter.actualizarLista(listaDeProductos)
+                            Toast.makeText(this, "Producto agregado", Toast.LENGTH_SHORT).show()
+                        },
+                        onFailure = {
+                            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show()
+                        }
+                    )
                 }
             }
         }

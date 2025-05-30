@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -80,6 +81,7 @@ dependencies {
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
     implementation("com.google.android.gms:play-services-auth:21.1.1")
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.0")
 
     // imagenes
     implementation("com.github.bumptech.glide:glide:4.16.0")
@@ -90,3 +92,5 @@ dependencies {
     // Places and Maps SDKs
     implementation("com.google.android.libraries.places:places:4.1.0")
 }
+
+apply(plugin = "com.google.gms.google-services")

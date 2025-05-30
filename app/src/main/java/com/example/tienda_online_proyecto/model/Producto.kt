@@ -9,10 +9,10 @@ enum class Categoria {
 
 
 data class Producto(
-    val id: String,
-    val nombre: String,
-    val precio: Double,
-    val imagenUrl: String,
-    val categoria: Categoria, // "casco", "guantes", "accesorio"
+    var id: String = "",
+    var nombre: String = "",
+    var precio: Double = 0.0,
+    var imagenUrl: String = "",
+    var categoria: Categoria = Categoria.ACCESORIO,
     var cantidad: Int = 1
 ): Serializable

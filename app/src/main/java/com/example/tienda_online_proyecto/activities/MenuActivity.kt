@@ -14,12 +14,15 @@ import com.example.tienda_online_proyecto.model.Categoria
 import com.example.tienda_online_proyecto.model.Producto
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.tienda_online_proyecto.utils.FirebaseService
 import com.example.tienda_online_proyecto.utils.LocationHelper
+import com.google.firebase.FirebaseApp
 
 class MenuActivity :AppCompatActivity(){
     private var productoAdapter = ProductoAdapter(emptyList())
 
     private lateinit var locationHelper: LocationHelper
+    private var productosCache: List<Producto> = emptyList()
 
     private val locationPermissionRequest =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
@@ -34,6 +37,8 @@ class MenuActivity :AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+        FirebaseApp.initializeApp(this)
 
         // Inicializar el helper DESPUÉS de registrar el permiso
         val tvDireccion = findViewById<TextView>(R.id.tvDireccion)
@@ -69,18 +74,29 @@ class MenuActivity :AppCompatActivity(){
         val recyclerProductos = findViewById<RecyclerView>(R.id.recyclerProductos)
         recyclerProductos.layoutManager = GridLayoutManager(this, 2)
 
-        productoAdapter = ProductoAdapter(listaCompleta)
+        productoAdapter = ProductoAdapter(emptyList())
         recyclerProductos.adapter = productoAdapter
+
+        // Obtener productos de Firestore
+        FirebaseService.obtenerProductos(
+            onSuccess = { productos ->
+                productosCache = productos
+                productoAdapter.actualizarLista(productos)
+            },
+            onError = { error ->
+                Toast.makeText(this, "Error: $error", Toast.LENGTH_SHORT).show()
+            }
+        )
 
         val fragment = supportFragmentManager.findFragmentById(R.id.filtrosFragmentContainer) as? com.example.tienda_online_proyecto.fragments.FiltrosFragment
 
         fragment?.setOnFiltroSeleccionado { categoriaSeleccionada ->
-            val productosFiltrados = if (categoriaSeleccionada == null) {
-                listaCompleta
+            val filtrados = if (categoriaSeleccionada == null) {
+                productosCache
             } else {
-                listaCompleta.filter { it.categoria == categoriaSeleccionada }
+                productosCache.filter { it.categoria == categoriaSeleccionada }
             }
-            productoAdapter.actualizarLista(productosFiltrados)
+            productoAdapter.actualizarLista(filtrados)
         }
     }
 
