@@ -82,10 +82,13 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.1.1")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx:24.10.0")
+<<<<<<< HEAD
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
     implementation ("com.google.firebase:firebase-database-ktx:20.3.0")
 
+=======
+>>>>>>> c654334ac77b8474192a1fb96a06772433f86dca
 
     // imagenes
     implementation("com.github.bumptech.glide:glide:4.16.0")

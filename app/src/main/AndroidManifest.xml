@@ -5,10 +5,13 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<<<<<<< HEAD
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
+=======
+>>>>>>> c654334ac77b8474192a1fb96a06772433f86dca
 
     <application
         android:allowBackup="true"
@@ -54,10 +57,13 @@
         <activity
             android:name=".activities.CarritoActivity"
             android:exported="false" />
+<<<<<<< HEAD
         <activity
             android:name=".activities.PerfilActivity"
             android:exported="false" />
 
+=======
+>>>>>>> c654334ac77b8474192a1fb96a06772433f86dca
 
         <meta-data
             android:name="preloaded_fonts"

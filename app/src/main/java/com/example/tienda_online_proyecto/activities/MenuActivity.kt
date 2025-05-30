@@ -51,6 +51,7 @@ class MenuActivity :AppCompatActivity(){
             startActivity(intent)
         }
 
+<<<<<<< HEAD
         // perfil
         findViewById<ImageView>(R.id.ivperfil).setOnClickListener {
             val intent = Intent(this, PerfilActivity::class.java)
@@ -58,6 +59,8 @@ class MenuActivity :AppCompatActivity(){
         }
 
 
+=======
+>>>>>>> c654334ac77b8474192a1fb96a06772433f86dca
         // admin
         findViewById<CardView>(R.id.ic_lista).setOnClickListener {
             val intent = Intent(this, AdminActivity::class.java)
