@@ -14,11 +14,18 @@
       },
       "oauth_client": [
         {
+          "client_id": "562735152365-2bja1fnpvr65rglp0526la791ruo4hpq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tienda_online_proyecto",
+            "certificate_hash": "fc275f40f1cf4aba8901eb67025ca6b0f1dbb0d8"
+          }
+        },
+        {
           "client_id": "562735152365-6h9sqe0mt1ms2c3rrm5gib3tccuqi6cj.apps.googleusercontent.com",
           "client_type": 3
         }
-      ]
-    ,
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAIHbqBW7zKpk1ikwNJ7FbRSHDOSjk_CDQ"
